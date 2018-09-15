@@ -5,7 +5,7 @@ for run:
 
 python3.* run2.py -i Word-kan-2
 
-python3.* run-t2.py -i Word-kan-2 (this ror android termux paltform. due ot some reseaon, there has not suspant wait for input, you must input something or just input Enter to continue. )
+python3.* run-t2.py -i Word-kan-2 (this for android termux paltform. due ot some reseaon, there has not suspant wait for input, you must input something or just input Enter to continue. )
 
 chose:
 1- quick review: all the words in the list will be printed with 1s suspend. once you input "q", the review will be stopped soon.
