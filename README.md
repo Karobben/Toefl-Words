@@ -5,6 +5,7 @@ for run:
 python3.* run2.py -i Word-kan
 chose:
 1- quick review: all the words in the list will be printed with 1s suspend. once you input "q", the review will be stopped soon.
+
 2- classify the words: the words will be classified to 4 difference files for further study.
                        input d, delete. the words will go to My.DB (My words)
                        input f, familliar, the words will go to Fm.DB (familiar words)
@@ -14,7 +15,9 @@ chose:
                        input m, the words show on toefl papers and News (it the do show on this database)
                        input hlep, if you forget above...
                        attention : if there have hesitated inner 2s, the words will go to Uf.DB for you.
+
 3- under developing
+
 4- please wait
 
 
