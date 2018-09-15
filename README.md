@@ -2,7 +2,7 @@
 For remeber the toefl words with your personal style
 
 for run:
-python3.* run2.py -i Word-kan
+python3.* run2.py -i Word-kan-2
 chose:
 1- quick review: all the words in the list will be printed with 1s suspend. once you input "q", the review will be stopped soon.
 
