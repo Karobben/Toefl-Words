@@ -67,7 +67,7 @@ def Classify_words(INPUT):
         print("\nRecoder:",NUM)
         time.sleep(1)
         os.system('clear')
-        print("Do you knoe this?")
+        print("Do you know this?")
         Y_choice2 = input()
         if Y_choice2 == 'h':
             Word_explan =  List.loc[List.index[0]]
