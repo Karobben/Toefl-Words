@@ -1,0 +1,53 @@
+#!/usr/bin/env python3.7
+print("Loading the words list")
+import argparse
+import pandas as pd
+import os
+import time
+import signal
+import random
+
+#命令行输入参数处理
+parser = argparse.ArgumentParser()
+parser.add_argument('-i','-I','--input')     #输入文件
+parser.add_argument('-t','-T','--time',type= int,default=6)
+#获取参数
+args = parser.parse_args()
+INPUT = args.input
+TIME =  args.time
+############################
+def input_out(a_S):
+  class InputTimeoutError(Exception):
+    pass
+  def interrupted(signum, frame):
+    raise InputTimeoutError
+
+  signal.signal(signal.SIGALRM, interrupted)
+  signal.alarm(a_S)
+
+  try:
+    BB = input()
+    signal.alarm(0)  # 读到输入的话重置信号
+  except InputTimeoutError:
+    BB = 'u'
+  return BB
+    #print('你的名字是：%s' % name)
+
+def Review_words(INPUT,TIME):
+    List=pd.read_csv(INPUT,sep='\t',header=None)
+    List.index = List[1]
+    print(List.index)
+    NUM=1
+    Y_choice = 'a'
+    while Y_choice != "q":
+        #print(List.index[NUM])
+        NUM = random.sample(range(len(List)),1)[0]
+        Word_explan =  List.loc[List.index[NUM]]
+        colored = '\x1b[6;45;97m' +  List.index[NUM] + '\x1b[0m'
+        print('\n\x1b[6;45;97m' ,  List.index[NUM] , '\x1b[0m\n')
+        time.sleep(1)
+        print('\n',Word_explan[2],'\n',Word_explan[3],'\n',Word_explan[4])
+        print(str(Word_explan[5]).replace( List.index[NUM],colored),'\n')
+        Y_choice = input_out(TIME)
+
+Review_words(INPUT,TIME)
