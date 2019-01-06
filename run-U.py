@@ -5,6 +5,9 @@ import pandas as pd
 import os
 import time
 import signal
+from time import gmtime, strftime
+
+DAY = strftime("%Y-%m-%d.DB", gmtime())
 
 
 #命令行输入参数处理
@@ -102,7 +105,8 @@ def Classify_words(INPUT):
                 List = List.drop(List.index[0])
                 order_1 = "awk 'NR==1{print}' " + INPUT +  " >tmp"
                 os.system(order_1)
-                os.system('cat tmp >> Uf.DB')
+                CMD_DAY = 'cat tmp >> ' + DAY
+                os.system(CMD_DAY)
                 order_2 = "sed -i 1d " + INPUT
                 os.system(order_2)
                 NUM=NUM+1
