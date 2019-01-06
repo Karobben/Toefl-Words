@@ -37,3 +37,24 @@ T.db: tpo reading and the reading paper of the writing.
 all.db: recently News from Washington post, USA today, Nature.
 
 hope will you get good grades soon!
+
+
+
+正确使用姿势：
+
+1, chmod +x run*  # 给所有程序执行权限
+
+2, ./run-2.py -i Word-Kan-2  # 开始对总库筛选。 时间可能会要的比较多。 输入1 是浏览。 输入2 是分类。 分类可选择 d, f, u, t （前面解释了）
+
+3, ./run-U.py -i Uf.DB（任何单词库都可以，比如换成 My.DB） # 这一步就可以进行拼写练习了。 其实你也大可跳过第一步，直接进行这一步。为了方便复习，这一步被分选的词，都会丢到一天命名的文件夹中。所以每天都有记录，想回头复习哪天，就哪天
+
+4, ./through  -i Uf.DB  -t 3 # 一样，可以看别的 词库。 t后面接时间，可不弄，默认个停留3秒。同事在里面，也可以通过按 回车键直接跳到下一个单词
+
+
+小技巧：
+
+如果有排序需求的，可以直接用 sort exp: sort Un.DB > tmp; mv tmp Un.DB
+
+整合多个词库成一个  cat 1.DB 2.DB 3.DB > 4.DB
+
+简单粗暴好用，轻量
